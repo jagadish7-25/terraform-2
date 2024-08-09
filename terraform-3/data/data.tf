@@ -1,10 +1,10 @@
-data "aws_ec2_instance_types" "test" {
-  filter {
-    name   = "terraform"
-    values = ["true"]
-  }
+data "aws_ami" "ami" {
+  
+  most_recent      = true
+  name_regex       = "amzn2-ami-kernel-5.10-hvm-2.0.20240719.0-x86_64-gp2"
+  owners           = ["992382427676"]
 }
 
-output "test" {
-  value = "aws_ec2_instance_types"
+output "ami" {
+  value = data.aws_ami.ami
 }
