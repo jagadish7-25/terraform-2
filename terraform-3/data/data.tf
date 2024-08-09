@@ -4,3 +4,7 @@ data "aws_ec2_instance_types" "test" {
     values = ["true"]
   }
 }
+
+output "test" {
+  value = "aws_ec2_instance_types"
+}
