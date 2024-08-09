@@ -1,6 +1,6 @@
 resource "aws_instance" "jacks" {
-  ami           = "ami-03972092c42e8c0ca"
-  instance_type = "t2.micro"
+  ami           = var.ami
+  instance_type = var.instance_type
   vpc_security_group_ids = ["sg-09c956a01686bdc1d"] 
   count         = 1
 
@@ -8,3 +8,9 @@ resource "aws_instance" "jacks" {
     Name = "Jacks"
   }
 }
+
+variable "instance_type" {}
+variable "ami" {
+  default = "ami-03972092c42e8c0ca"
+}
+
