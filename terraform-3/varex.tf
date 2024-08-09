@@ -1,12 +1,32 @@
 resource "aws_instance" "jacks" {
-  ami           = "ami-03972092c42e8c0ca"
+  ami           = var.ami
   instance_type = var.instance_type
-  vpc_security_group_ids = ["sg-09c956a01686bdc1d"] 
-  count         = 1
+  vpc_security_group_ids = var.sgs
+ 
 
   tags = {
     Name = var.Name
   }
 }
 
+resource "aws_instance" "jacks" {
+  ami           = var.ami
+  instance_type = var.instance_type
+  vpc_security_group_ids = var.sgs
+
+  tags = {
+    Name = var.Name
+  }
+}
+
+resource "aws_instance" "jacks" {
+  ami           = var.ami
+  instance_type = var.instance_type
+  vpc_security_group_ids = var.sgs 
+  
+
+  tags = {
+    Name = var.Name
+  }
+}
 

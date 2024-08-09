@@ -3,5 +3,13 @@ variable "instance_type" {
 }
 
 variable "Name" {
-  default = "jack"
+  default = ["jack", "jhon", "ratanam" ]
+}
+
+variable "ami" {
+  default = "ami-03972092c42e8c0ca"
+}
+
+variable "sgs" {
+  default = ["sg-09c956a01686bdc1d"] 
 }
