@@ -1,4 +1,4 @@
-data "aws_ami" "ami" { 
+data "aws_ami" "test" { 
   executable_users = ["self"]
   most_recent      = true
   name_regex       = "amzn2-ami-kernel-5.10-hvm-2.0.20240719.0-x86_64-gp2"
@@ -6,5 +6,5 @@ data "aws_ami" "ami" {
 }
 
 output "ami" {
-  value = data.aws_ami.ami
+  value = data.aws_ami.test
 }
